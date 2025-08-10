@@ -34,6 +34,9 @@
       <button class="btn btn-secondary" (click)="onBackHome()">
         🏠 Back to Home
       </button>
+      <button class="btn btn-share" (click)="onShareRecipe()">
+        📋 Share Recipe
+      </button>
       <button class="btn btn-primary" (click)="onTryAnother()">
         🎲 Try Another Recipe
       </button>
@@ -50,3 +53,13 @@
     </button>
   </div>
 </div>
+
+<!-- Share Modal -->
+<app-share-modal 
+  [recipe]="recipe" 
+  [isOpen]="isShareModalOpen" 
+  (close)="onCloseShareModal()">
+</app-share-modal>
+
+<!-- Notifications -->
+<app-notification></app-notification>

@@ -178,6 +178,17 @@
   box-shadow: 0 10px 25px rgba(79, 172, 254, 0.6);
 }
 
+.btn-share {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+  color: #8b4513;
+  box-shadow: 0 5px 15px rgba(255, 154, 158, 0.4);
+}
+
+.btn-share:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 154, 158, 0.6);
+}
+
 .error-card {
   text-align: center;
   max-width: 500px;

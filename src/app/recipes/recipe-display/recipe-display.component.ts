@@ -9,6 +9,7 @@ import { Recipe } from '../models/recipe.interface';
 })
 export class RecipeDisplayComponent implements OnInit {
   recipe: Recipe | null = null;
+  isShareModalOpen: boolean = false;
 
   constructor(private router: Router) {
     // Get the recipe from navigation state
@@ -31,5 +32,13 @@ export class RecipeDisplayComponent implements OnInit {
 
   onBackHome(): void {
     this.router.navigate(['/welcome']);
+  }
+
+  onShareRecipe(): void {
+    this.isShareModalOpen = true;
+  }
+
+  onCloseShareModal(): void {
+    this.isShareModalOpen = false;
   }
 }
