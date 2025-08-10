@@ -1,0 +1,39 @@
+<div class="welcome-container">
+  <div class="welcome-card">
+    <h1 class="welcome-title">🍳 Welcome to Recipe Assistant</h1>
+    
+    <div class="date-display">
+      <h2>{{ formattedDate }}</h2>
+    </div>
+
+    <div class="content-section" *ngIf="isSunday">
+      <div class="sunday-message">
+        <h3>🗓️ It's Sunday!</h3>
+        <p>Would you like to get a random recipe for the following week?</p>
+        <p class="week-range"><strong>{{ weekDateRange }}</strong></p>
+        
+        <button class="btn btn-primary" (click)="onGetWeeklyRecipe()">
+          Get Weekly Recipe 📅
+        </button>
+      </div>
+    </div>
+
+    <div class="content-section" *ngIf="!isSunday">
+      <div class="regular-day-message">
+        <h3>🍽️ Looking for a recipe?</h3>
+        <p>Let me help you find something delicious to cook today!</p>
+        
+        <button class="btn btn-primary" (click)="onGetRandomRecipe()">
+          Find Random Recipe 🎲
+        </button>
+      </div>
+    </div>
+
+    <div class="additional-option" *ngIf="isSunday">
+      <p class="or-text">OR</p>
+      <button class="btn btn-secondary" (click)="onGetRandomRecipe()">
+        Just Get Any Random Recipe 🎲
+      </button>
+    </div>
+  </div>
+</div>

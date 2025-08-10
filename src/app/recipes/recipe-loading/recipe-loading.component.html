@@ -1,0 +1,24 @@
+<div class="loading-container">
+  <div class="loading-card">
+    <div class="loading-header">
+      <h2>🍳 Selecting Your Recipe</h2>
+    </div>
+    
+    <div class="loading-animation">
+      <div class="spinner">
+        <div class="spinner-inner"></div>
+      </div>
+    </div>
+    
+    <div class="loading-message">
+      <p>{{ currentMessage }}</p>
+    </div>
+    
+    <div class="loading-dots">
+      <span class="dot" [class.active]="currentMessageIndex >= 0"></span>
+      <span class="dot" [class.active]="currentMessageIndex >= 1"></span>
+      <span class="dot" [class.active]="currentMessageIndex >= 2"></span>
+      <span class="dot" [class.active]="currentMessageIndex >= 3"></span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="recipe-container" *ngIf="recipe">
+  <div class="recipe-card">
+    <div class="recipe-header">
+      <h1 class="recipe-title">{{ recipe.name }}</h1>
+      <div class="protein-badge">
+        <span class="protein-label">Protein:</span>
+        <span class="protein-value">{{ recipe.protein }}</span>
+      </div>
+    </div>
+
+    <div class="recipe-description">
+      <p>{{ recipe.description }}</p>
+    </div>
+
+    <div class="recipe-content">
+      <div class="ingredients-section">
+        <h3>📝 Ingredients</h3>
+        <ul class="ingredients-list">
+          <li *ngFor="let ingredient of recipe.ingredients" class="ingredient-item">
+            {{ ingredient }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="notes-section">
+        <h3>💡 Notes & Storage Tips</h3>
+        <div class="notes-content">
+          <p>{{ recipe.notes }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="recipe-actions">
+      <button class="btn btn-secondary" (click)="onBackHome()">
+        🏠 Back to Home
+      </button>
+      <button class="btn btn-primary" (click)="onTryAnother()">
+        🎲 Try Another Recipe
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="error-container" *ngIf="!recipe">
+  <div class="error-card">
+    <h2>😅 Oops!</h2>
+    <p>No recipe was selected. Let's get you back to the homepage!</p>
+    <button class="btn btn-primary" (click)="onBackHome()">
+      🏠 Go Home
+    </button>
+  </div>
+</div>
